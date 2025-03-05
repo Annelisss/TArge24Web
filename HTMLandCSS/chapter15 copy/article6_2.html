@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./chapter 15_copy/cc/960_12_col.ee">
+    <title>Main Page</title>
+    <style>
+        .title-container {
+            position: absolute;
+            top: 130px; /* Pealkirja kõrgus kolmnurga peal */
+            left: 400px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .title-container h1 {
+            font-size: 240%;
+            color: #b5c1ad;
+            margin-top: 0; /* Eemaldan liigse vahe */
+        }
+
+        .content-container {
+            position: absolute;
+            top: 200px; /* teksti asukoht pealkirjast allapoole */
+            left: 740px; /* Tekst paremale */
+            width: 400px;
+            text-align: left;
+        }
+
+        .main-story {
+            position: relative;
+            min-height: 570px;
+            background-image: url("./triangle8.png");
+            background-repeat: no-repeat;
+            background-position: 90px 120px; /* kolmnurga asukoht */
+        }
+
+        @font-face {
+            font-family: 'QuicksandBook';
+            src: url('fonts/Quicksand_Book-webfont.eot');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            color: #ffffff;
+            background: #413f3b url("./bg.jpg");
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 90%;
+            margin: 0px;
+            text-align: center;
+        }
+        a {
+            color: #b5c1ad;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background-image: url("./bg-header.jpg");
+            background-size: cover;
+            z-index: 100;
+		}
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 101;
+            font-family: QuicksandBook, Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.3); /* Lisab läbipaistva tausta, kui vaja */
+            padding: 5px 10px;
+            border-radius: 5px;
+
+		}
+
+        .wrapper {
+            width: 960px;
+            margin: 0 auto;
+            background-image: url("./bg-triangle.png");
+            background-repeat: no-repeat;
+            background-position: left top; /* Nihutab kolmnurka vasakule */
+            background-size: auto;
+            min-height: 500px; /* Väldi taustapildi venitust */
+            position: relative;
+            z-index: 1;
+
+		}
+        .logo {
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            font-family: QuicksandBook, Arial, Helvetica, sans-serif;
+            font-size: 75%;
+            color: #b5c1ad;
+        }
+        h1 {
+            font-size: 240%;
+            margin-top: 140px;
+        }
+        .date {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 75%;
+            color: #b5c1ad;
+        }
+        .intro {
+            clear: left;
+            font-size: 90%;
+            line-height: 1.4em;
+        }
+        .more-articles {
+            border-top: 1px solid #ffffff;
+            padding: 20px 0; /* Suurendab ülemist paddingut */
+            margin-top: 40px; /* Nihutab kogu sektsiooni alla */
+            clear: both;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-left: -10px;
+            width: fit-content;
+        }
+        .more-articles p {
+            border-bottom: 1px solid #807c72;
+            padding: 5px 0px 15px 0px;
+            font-size: 80%;
+        }
+        .more-articles p:last-child {
+            border-bottom: none;
+        }
+        .footer {
+            clear: both;
+            background: rgba(0, 0, 0 , 0.2);
+            padding: 5px 10px;
+        }
+        .footer p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 75%;
+            text-align: right;
+        }
+        .footer a {
+            color: #807c72;
+        }
+        .clear {
+            clear: both;
+            margin-top: 3px;
+        }
+        .more-articles h2 {
+            font-size: 24px;
+            width: 100%;
+            text-align: left; /* Joondab pealkirja vasakule */
+            margin-left: 0; /* Väldib liigset nihkumist */
+        }
+        .more-articles .grid_3 {
+            flex: 1 1 220px;
+            max-width: 220px;
+            margin-bottom: 0px; /* Lisab vahet artiklite alla */
+            margin-top: 0px; /* Nihutab pildid allapoole */
+            margin-right: 30px;
+        }
+        .more-articles .grid_3:last-child {
+                margin-right: 0;
+        }
+        .grid_5 {
+    position: relative;
+    left: -280px; /* Nihutab logo ja kolmnurga vasakule */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container_12">
+            <div class="grid_5">
+                <img src="./logo.png" alt="Pedal Faster - The modern bicycle magazine" width="216" height="37" class="logo" />
+                <img src="./header-triangle.png" alt="" width="116" height="100">
+            </div>
+            <div class="nav grid_7">
+                <a href="example.html">home</a> / <a href="news.html">news</a> / <a href="archives.html">archives</a> / <a href="about.html">about</a> / <a href="contact.html">contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="main-story container_12">
+            <div class="grid_6 title-container">
+                <h1>The best cycling videos</h1>
+            </div>
+            <div class="grid_6 content-container">
+                <p class="date">10 MARCH 2025</p>
+                <p>
+                    Cycling enthusiasts can now explore <br>
+                    the best rides, races, and tips <br>
+                    through InnerTube, a go-to source <br>
+                    for top cycling videos online. From <br>
+                    breathtaking mountain descents<br> 
+                    to in-depth bike reviews, this <br>
+                    platform curates content for riders <br>
+                    of all levels. Whether you're looking <br>
+                    for pro race highlights, maintenance <br>
+                    tutorials, or inspiring adventure <br>
+                    documentaries, InnerTube has <br>
+                    something for everyone.<br> 
+                </p>  <p>  
+                    Featuring expert insights and real <br>
+                    rider experiences, it helps cyclists <br>
+                    stay informed, entertained, and <br>
+                    motivated. With fresh uploads and <br>
+                    trending videos, InnerTube is the <br>
+                    ultimate destination for anyone <br>
+                    passionate about life on two wheels. <br> 
+                </p>
+
+                <p> <a href="article6.html">Smaller...</a></p>
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>        
+            <div class="clear"></div>
+            
+            <div class="more-articles container_12">
+                <h2 class="grid_12">More Articles</h2>
+                <div class="grid_3">
+                    <img src="./more1.jpg" alt="The road ahead" width="220" height="125" />
+                    <p><a href="articel1.html">On the Road: From the fixed gear fanatic's point of view</a></p>
+                    <p><a href="article2.html">Brand History: Pashley Cycles - hand built in England</a></p>
+                    <p><a href="article3.html">Frame Wars: Innovations in cycle manufacture and repair</a></p>
+                </div>
+                <div class="grid_3">
+                    <img src="./more2.jpg" alt="Sketchbook" width="220" height="125" />
+                    <p><a href="article4.html">Touring Diary: A sketchbook in your basket</a></p>
+                    <p><a href="article5.html">Top Ten Newcomers for 2023: A peek at what's to come</a></p>
+                    <p><a href="article6.html">InnerTube: The best cycling videos on the web</a></p>
+                </div>
+                <div class="grid_3">
+                    <img src="./more3.jpg" alt="Repair shop sign" width="220" height="125" />
+                    <p><a href="article6.html">Product Review: All baskets were not created equal</a></p>
+                    <p><a href="article6.html">Going Public: Out &amp; about with the founder of Public</a></p>
+                    <p><a href="article6.html">Cycle Lane Defence: Know your rights</a></p>
+                </div>
+                <div class="grid_3">
+                    <img src="./more4.jpg" alt="Schwinn Spitfire" width="220" height="125" />
+                    <p><a href="article6.html">Bicycle Hall of Fame: The 1958 Schwinn Spitfire</a></p>
+                    <p><a href="article6.html">Reader Survey: Share your thoughts with us!</a></p>
+                    <p><a href="article6.html">Chain Gang: The evolution of tthe humble bike chain</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer clearfix">
+            <div class="container_12">
+                <p class="grid_12"><a href="legal.html">Legal Information</a> | <a href="privacy.html">Privacy Policy</a> | <a href="example.html">Copyright &copy; Pedal Faster 2025</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
