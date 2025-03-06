@@ -3,31 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aligning images</title>
+    <title>Aligning Images</title>
     <style>
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
-            Color: #665544;   
+            color: #665544;
         }
-        img.align-left;
-        margin-left: 10px;
-        {
-
+        img.align-left {
+            float: left;
+            margin-right: 10px;
+        }
+        img.align-right {
+            float: right;
+            margin-left: 10px;
+        }
+        img.medium {
+            width: 250px;
+            height: 250px;
         }
     </style>
 </head>
 <body>
     <p>
-        <img src=""alt="">
-        <b><i>Magnolia</i></b>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dolorem ea rerum facere totam vel voluptatem sapiente quasi nisi repellat dolor pariatur odit perferendis architecto quaerat placeat nesciunt dicta molestiae?
+        <img src="images/magnolia-medium.jpg" alt="Magnolia" class="align-left medium">
+        <b><i>Magnolia</i></b> is a large genus that contains over 
+        200 flowering plant species. it is named after French 
+        botanist Pierre Magnol and, having evolved before bees 
+        appeared, the flowers were developed to encourage pollination 
+        by beetle.
     </p>
     <p>
-        <img src="images/magnolia-medium.jpg" alt="Magnolia" class="align+right magnolia-medium">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam inventore, culpa dolorem voluptatum magni possimus ipsum dicta ea! Similique nihil, voluptatibus suscipit natus adipisci sit incidunt vel rerum voluptatum alias!
-
-    <p>Kui külastad brauserit, siis saad seda teksti vaadata</p>
-    <p>Kui külastad brauserit, siis saad seda teksti vaadata</p>
-    <p>Kui külastad brauserit, siis saad seda teksti vaadata</p>
+        <img src="images/magnolia-medium.jpg" alt="Magnolia" class="align-right medium">
+        Some magnolias, such as <i>Magnolia stellata</i> and <i>
+        Magnolia soulangeana</i>, flower quite early in the 
+        spring before the leaves open. Others flower in late 
+        spring or early summer, such as <i>Magnolia grandiflora</i>.
+    </p>
 </body>
 </html>
