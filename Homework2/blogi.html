@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    .blog-header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('pilt4.png') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      backdrop-filter: blur(3px);
+    }
+    .blog-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .blog-card img {
+      height: 250px;
+      object-fit: cover;
+    }
+    .blog-card .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .blog-card .card-title {
+      min-height: 3em;
+      line-height: 1.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+    }
+    .blog-card .card-text {
+      min-height: 3em;
+      line-height: 1.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .blog-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .modal-backdrop.show {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+    }
+    .modal-content {
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+    }
+    .cart-icon {
+      position: relative;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+    .loe-nupp {
+      display: inline-block;
+      width: auto;
+      padding: 0.375rem 0.75rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigatsioonimenüü -->
+  <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Ettevõte</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="blogi.html">Blogi</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Tooted</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+          <li class="nav-item">
+            <a class="nav-link cart-icon" href="#">
+              🛒 <span class="cart-badge" id="cart-count">0</span>
+            </a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Logi sisse</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blogi päis -->
+  <div class="blog-header">
+    <h1>Tere tulemast meie blogisse</h1>
+    <p>Uudised, nõuanded ja inspireerivad lood</p>
+  </div>
+
+  <!-- Blogipostitused -->
+  <div class="container py-5">
+    <div class="row">
+      <!-- Kaart 1 -->
+      <div class="col-md-3 mb-4 d-flex">
+        <div class="card blog-card w-100">
+          <img src="pilt5.webp" class="card-img-top" alt="Blogi postitus 1">
+          <div class="card-body">
+            <h5 class="card-title">Innovaatilised lahendused 2025</h5>
+            <p class="card-text">Uued tehnoloogiad ja trendid, mis muudavad maailma...</p>
+            <a href="#" class="btn btn-primary loe-nupp align-self-start">Loe edasi</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kaart 2 -->
+      <div class="col-md-3 mb-4 d-flex">
+        <div class="card blog-card w-100">
+          <img src="pilt6.webp" class="card-img-top" alt="Blogi postitus 2">
+          <div class="card-body">
+            <h5 class="card-title">Kuidas parandada tootlikkust?</h5>
+            <p class="card-text">Avasta parimad töövõtted ja strateegiad...</p>
+            <a href="#" class="btn btn-primary loe-nupp align-self-start">Loe edasi</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kaart 3 -->
+      <div class="col-md-3 mb-4 d-flex">
+        <div class="card blog-card w-100">
+          <img src="pilt11.webp" class="card-img-top" alt="Blogi postitus 3">
+          <div class="card-body">
+            <h5 class="card-title">Eduka äri saladused</h5>
+            <p class="card-text">Mida peaksid teadma ettevõtlusest ja kasvust...</p>
+            <a href="#" class="btn btn-primary loe-nupp align-self-start">Loe edasi</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kaart 4 -->
+      <div class="col-md-3 mb-4 d-flex">
+        <div class="card blog-card w-100">
+          <img src="pilt12.webp" class="card-img-top" alt="Blogi postitus 4">
+          <div class="card-body">
+            <h5 class="card-title">5 sammu paremaks ajajuhtimiseks</h5>
+            <p class="card-text">Õpi, kuidas oma aega paremini planeerida...</p>
+            <a href="#" class="btn btn-primary loe-nupp align-self-start">Loe edasi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logi sisse modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Logi sisse</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sulge"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="Sisesta oma e-mail" required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Salasõna</label>
+              <input type="password" class="form-control" id="password" placeholder="Sisesta oma salasõna" required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Logi sisse</button>
+          </form>
+          <p class="text-center mt-3"><a href="#">Unustasid salasõna?</a></p>
+          <p class="text-center mt-3"><a href="#">Loo konto</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jalus -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-0">© <span id="currentYear"></span> Ettevõte. Kõik õigused kaitstud.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    AOS.init();
+    function updateCartCount() {
+      const count = localStorage.getItem("cartCount") || 0;
+      const badge = document.getElementById("cart-count");
+      if (badge) {
+        badge.textContent = count;
+      }
+    }
+    document.addEventListener("DOMContentLoaded", updateCartCount);
+  </script>
+</body>
+</html>
